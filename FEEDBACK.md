@@ -1,0 +1,2 @@
+# Part One - Intro to OO
+Classes look good! Glad to see you starting to test in the run.rb file as well. If you're pretty confident with the core concepts, start building out a CLI application as well. 
