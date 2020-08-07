@@ -1,5 +1,6 @@
 class Patient
     attr_accessor :name, :age, :impatience
+    attr_reader :doctor
     @@all = []
     
     def initialize(name, age)
@@ -12,6 +13,10 @@ class Patient
     def inquire_appt_ready
         puts "The Doctor will be ready soon"
         increase_impatiance
+    end
+
+    def change_doctors(doc)
+        this.doctor = doc
     end
 
     # all methods under this line and above private are Class methods

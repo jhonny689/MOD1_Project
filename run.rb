@@ -1,6 +1,7 @@
 require 'pry'
 require_relative 'app/models/doctor'
 require_relative 'app/models/patient'
+require './console.rb'
 
 $Menu = [
     {input: 0, function: "Display Menu"},
@@ -10,6 +11,8 @@ $Menu = [
 ]
 
 def run
+    Console.setup
+    #binding.pry
     puts "Hello, welcome to our CLI..."
     puts "For a menu of our functionalities [help] press 0 at any time, or exit to leave"
     keep_going = true
@@ -29,6 +32,12 @@ def listener
         true
     when "2"
         puts create_doctor
+        true
+    when "3"
+        puts list_doctors
+        true
+    when "4"
+        puts list_patients
         true
     when "exit"
         false
@@ -69,6 +78,18 @@ def create_doctor
     
     puts "Patient #{doc}, was successfully created."
     return "What else would you like to do?"
+end
+
+def list_doctors
+    Doctor.all.each do |doc|
+        puts "name = #{doc.name} || speciality = #{doc.speciality} || years = #{doc.years}."
+    end
+end
+
+def list_patients
+    Patient.all.each do |pat|
+        puts "name = #{pat.name} || age = #{pat.age} || doctor = #{pat.doctor}."
+    end
 end
 
 doc1 = Doctor.new("doc1","spec1",2)
