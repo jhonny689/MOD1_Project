@@ -11,3 +11,8 @@ I am thinking of creating a secretary class so a secretary can create a qeue and
 # Part 2 
 
 Everything looks good!! I love that you went above and started working on a CLI, thats great practice! all in all I think it looks really good and I dont have any notes! Keep working hard!
+
+# Part 4
+- `appointment.rb` is beautiful. `self.exist?` :claps:
+- `doctor.rb` and `patient.rb` look good and the beauty that is `Patient#create_appointment` with `Appointment.exist?`. 
+- `run.rb` is great and the modularization of the behaviors is beautiful. 
