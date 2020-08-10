@@ -1,12 +1,14 @@
 require 'pry'
 require_relative 'app/models/doctor'
 require_relative 'app/models/patient'
+require_relative 'app/models/appointment'
 require './console.rb'
 
 $Menu = [
     {input: 0, function: "Display Menu"},
     {input: 1, function: "Create Patient"},
     {input: 2, function: "Create Doctor"},
+    {input: 9, function: "Free commands in PRY"},
     {input: "exit", function: "Exit"}
 ]
 
@@ -38,6 +40,9 @@ def listener
         true
     when "4"
         puts list_patients
+        true
+    when "9"
+        binding.pry
         true
     when "exit"
         false
@@ -74,9 +79,9 @@ def create_doctor
     d_years = gets.chomp
 
     # Create the doctor and let the user know it was successfull
-    doc = Patient.new(d_name, d_speciality, d_years.to_i)
+    doc = Doctor.new(d_name, d_speciality, d_years.to_i)
     
-    puts "Patient #{doc}, was successfully created."
+    puts "Doctor #{doc}, was successfully created."
     return "What else would you like to do?"
 end
 
